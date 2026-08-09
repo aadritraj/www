@@ -1,0 +1,137 @@
+:root {
+	--color-ink: #20262b;
+	--color-ink-muted: #59636b;
+	--color-paper: #f7f8f6;
+	--color-accent: #8fd9fb;
+	--color-accent-deep: #287b9d;
+	--content-width: 46rem;
+	--gutter: clamp(1.25rem, 5vw, 4rem);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--color-paper);
+	color: var(--color-ink);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+body {
+	margin: 0;
+	padding: 0 var(--gutter) 4rem;
+}
+
+a {
+	color: var(--color-accent-deep);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--color-ink);
+	text-decoration: underline;
+	text-decoration-thickness: 0.09em;
+	text-underline-offset: 0.16em;
+}
+
+a[target="_blank"]::after {
+	content: " ↗";
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+a:focus-visible {
+	outline: 0.18rem solid var(--color-accent-deep);
+	outline-offset: 0.2rem;
+}
+
+::selection {
+	background: var(--color-accent);
+	color: var(--color-ink);
+}
+
+.header {
+	align-items: center;
+	border-bottom: 1px solid rgba(32, 38, 43, 0.14);
+	display: flex;
+	justify-content: space-between;
+	margin: 0 calc(var(--gutter) * -1);
+	padding: 1.5rem var(--gutter);
+}
+
+.header-brand {
+	align-items: center;
+	display: flex;
+	gap: 0.7rem;
+}
+
+.header-brand p {
+	color: var(--color-ink);
+	font-family: system-ui, sans-serif;
+	font-size: 0.9rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin: 0;
+}
+
+.header-star {
+	animation: spin 4s linear infinite;
+	color: var(--color-accent-deep);
+	display: block;
+	font-size: 1.75rem;
+	line-height: 1;
+}
+
+.header nav {
+	display: flex;
+	gap: 1.25rem;
+}
+
+.header nav a {
+	color: var(--color-ink-muted);
+	font-family: system-ui, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.header nav a:hover {
+	color: var(--color-accent-deep);
+}
+
+main {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--content-width);
+}
+
+main > h1,
+main > section > h1 {
+	margin-top: 0;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 38rem) {
+	body {
+		padding-bottom: 2.5rem;
+	}
+
+	.header {
+		padding-bottom: 1.5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.header-star {
+		animation: none;
+	}
+}
