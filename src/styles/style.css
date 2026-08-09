@@ -103,6 +103,10 @@ a:focus-visible {
 	color: var(--color-accent-deep);
 }
 
+.date-display {
+	color: var(--color-ink)
+}
+
 main {
 	margin-left: auto;
 	margin-right: auto;
