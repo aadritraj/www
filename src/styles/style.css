@@ -13,7 +13,11 @@
 }
 
 html {
-	background: var(--color-paper);
+	background:
+		radial-gradient(circle at 10% 10%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 30rem),
+		radial-gradient(circle at 90% 40%, color-mix(in srgb, var(--color-accent-deep) 8%, transparent), transparent 34rem),
+		var(--color-paper);
+	background-attachment: fixed;
 	color: var(--color-ink);
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 1.1rem;
@@ -107,11 +111,14 @@ a:focus-visible {
 
 .header {
 	align-items: center;
-	border-bottom: 1px solid rgba(32, 38, 43, 0.14);
+	backdrop-filter: blur(14px) saturate(115%);
+	background: color-mix(in srgb, var(--color-paper) 72%, transparent);
+	border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
 	display: flex;
 	justify-content: space-between;
 	margin: 0 calc(var(--gutter) * -1) 2.5rem;
 	padding: 1.5rem var(--gutter);
+	-webkit-backdrop-filter: blur(14px) saturate(115%);
 }
 
 .header-brand {
@@ -156,7 +163,7 @@ a:focus-visible {
 }
 
 .post-header {
-	border-bottom: 1px solid rgba(32, 38, 43, 0.14);
+	border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
 	margin-bottom: 2rem;
 	padding-bottom: 1.5rem;
 }
