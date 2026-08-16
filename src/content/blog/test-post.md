@@ -2,6 +2,7 @@
 title: "Test Post"
 description: "This is a test post"
 pubDate: "Aug 09 2026"
+hidden: true
 ---
 
 # Heading
