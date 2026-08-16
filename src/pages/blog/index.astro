@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import DateDisplay from "../../components/DateDisplay.astro";
 
 const posts = (await getCollection("blog"))
     .filter((post) => !post.data.hidden)
@@ -15,7 +16,7 @@ const posts = (await getCollection("blog"))
 				{posts.map((post) => (
 					<li>
 						<a href={`/blog/${post.id}`}>{post.data.title}</a>
-						<p>{post.data.pubDate}</p>
+						<p><DateDisplay date={post.data.pubDate} /></p>
 					</li>
 				))}
 			</ul>
