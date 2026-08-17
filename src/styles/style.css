@@ -27,7 +27,10 @@ html {
 		radial-gradient(circle at 10% 10%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 30rem),
 		radial-gradient(circle at 90% 40%, color-mix(in srgb, var(--color-accent-deep) 8%, transparent), transparent 34rem),
 		var(--color-paper);
+	background-position: 10% 10%, 90% 40%, 0 0;
+	background-size: 140% 140%, 140% 140%, auto;
 	background-attachment: fixed;
+	animation: ambient-gradient-drift 8s ease-in-out infinite alternate;
 	color: var(--color-ink);
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 1.1rem;
@@ -233,6 +236,20 @@ body:has(.home) {
 	}
 }
 
+@keyframes ambient-gradient-drift {
+	0% {
+		background-position: 10% 10%, 90% 40%, 0 0;
+	}
+
+	50% {
+		background-position: 16% 16%, 80% 50%, 0 0;
+	}
+
+	100% {
+		background-position: 8% 25%, 90% 35%, 0 0;
+	}
+}
+
 @media (max-width: 38rem) {
 	body {
 		padding-bottom: 2.5rem;
@@ -244,6 +261,7 @@ body:has(.home) {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	html,
 	.header-star {
 		animation: none;
 	}
